@@ -17,9 +17,24 @@ namespace Prog_3_Project_alpha_v0._1
             InitializeComponent();
         }
 
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
+
+        private void Pic_Box_Display_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.SetToolTip(pictureBox1,"Display");
+            toolTip1.SetToolTip(Pic_Box_Display, "Display");
+        }
+        private void Pic_Box_Add_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(Pic_Box_Add, "Add");
+        }
+
+        private void Pic_Box_Edit_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(Pic_Box_Edit, "Edit");
+        }
+
+        private void Pic_Box_Delete_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.SetToolTip(Pic_Box_Delete, "Delete");
         }
     }
 }

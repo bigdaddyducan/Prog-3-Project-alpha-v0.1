@@ -22,19 +22,5 @@ namespace Prog_3_Project_alpha_v0._1
         {
             toolTip1.SetToolTip(Pic_Box_Display, "Display");
         }
-        private void Pic_Box_Add_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(Pic_Box_Add, "Add");
-        }
-
-        private void Pic_Box_Edit_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(Pic_Box_Edit, "Edit");
-        }
-
-        private void Pic_Box_Delete_MouseHover(object sender, EventArgs e)
-        {
-            toolTip1.SetToolTip(Pic_Box_Delete, "Delete");
-        }
     }
 }

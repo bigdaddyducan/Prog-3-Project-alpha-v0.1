@@ -22,5 +22,10 @@ namespace Prog_3_Project_alpha_v0._1
         {
             toolTip1.SetToolTip(Pic_Box_Display, "Display");
         }
+
+        private void Staff_Form_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

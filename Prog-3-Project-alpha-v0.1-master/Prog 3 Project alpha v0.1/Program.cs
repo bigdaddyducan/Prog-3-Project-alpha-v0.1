@@ -16,7 +16,7 @@ namespace Prog_3_Project_alpha_v0._1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Staff_Form());
+            Application.Run(new MainForm());
         }
     }
 }

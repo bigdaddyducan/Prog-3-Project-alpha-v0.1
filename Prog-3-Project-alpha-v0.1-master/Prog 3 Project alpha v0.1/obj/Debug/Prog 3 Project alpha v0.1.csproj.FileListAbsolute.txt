@@ -1,0 +1,6 @@
+C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog 3 Project alpha v0.1.csproj.AssemblyReference.cache
+C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog_3_Project_alpha_v0._1.Staff_Form.resources
+C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog_3_Project_alpha_v0._1.Properties.Resources.resources
+C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog_3_Project_alpha_v0._1.StaffForm.resources
+C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog 3 Project alpha v0.1.csproj.GenerateResource.cache
+C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog 3 Project alpha v0.1.csproj.CoreCompileInputs.cache

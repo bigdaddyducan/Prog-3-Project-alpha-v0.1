@@ -13,32 +13,32 @@ using System.Drawing.Text;
 
 namespace Prog_3_Project_alpha_v0._1
 {
-    public partial class StaffForm : Form
+    public partial class StaffDisplay : Form
     {
-        SqlDataAdapter daCustomer;
-        DataSet dsInTheDogHouse = new DataSet();
-        SqlCommandBuilder cmdBCustomer;
-        DataRow drCustomer;
-        String connStr, sqlCustomer;
+        SqlDataAdapter daStaff;
+        DataSet dsRota = new DataSet();
+        SqlCommandBuilder cmdBRota;
+        DataRow drStaff;
+        String connStr, sqlStaff;
         int selectedTab = 0;
         bool custSelected = false;
         int custNoSelected = 0;
 
-        public StaffForm()
+        public StaffDisplay()
         {
             InitializeComponent();
         }
         private void StaffForm_Load(object sender, EventArgs e)
         {
-            connStr = @"Data Source = .;Initial Catalog = InTheDogHouse;Integrated Security = true";
+            connStr = @"Data Source = .;Initial Catalog = Rota;Integrated Security = true";
 
-            sqlCustomer = @"select * from Customer";
-            daCustomer = new SqlDataAdapter(sqlCustomer, connStr);
-            cmdBCustomer = new SqlCommandBuilder(daCustomer);
-            daCustomer.FillSchema(dsInTheDogHouse, SchemaType.Source, "Customer");
-            daCustomer.Fill(dsInTheDogHouse, "Customer");
+            sqlStaff = @"select * from Staff";
+            daStaff = new SqlDataAdapter(sqlStaff, connStr);
+            cmdBRota = new SqlCommandBuilder(daStaff);
+            daStaff.FillSchema(dsRota, SchemaType.Source, "Staff");
+            daStaff.Fill(dsRota, "Staff");
 
-            DGV1.DataSource = dsInTheDogHouse.Tables["Customer"];
+            DGV1.DataSource = dsRota.Tables["Staff"];
 
             //dgv resizeing
             DGV1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
@@ -48,13 +48,13 @@ namespace Prog_3_Project_alpha_v0._1
         }
         private void btn_AddAdd_Click(object sender, EventArgs e)
         {
-            StaffId StaffID = new StaffId();
+            Staff staffID = new Staff();
             bool ok = true;
             errP.Clear();
 
             try
             {
-                StaffID.StaffID = Convert.ToInt32(lbl_AddStaffIDChange.Text.Trim());
+                staffID.StaffID = Convert.ToInt32(lbl_AddStaffIDChange.Text.Trim());
             }
             catch (MyException MyEx)
             {
@@ -64,7 +64,7 @@ namespace Prog_3_Project_alpha_v0._1
 
             try
             {
-                StaffID.Surname = txt_AddSurname.Text.Trim();
+                staffID.Surname = txt_AddSurname.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -74,7 +74,7 @@ namespace Prog_3_Project_alpha_v0._1
 
             try
             {
-                StaffID.Forename = txt_AddForename.Text.Trim();
+                staffID.Forename = txt_AddForename.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -84,7 +84,7 @@ namespace Prog_3_Project_alpha_v0._1
 
             try
             {
-                StaffID.Street = txt_AddStreet.Text.Trim();
+                staffID.Street = txt_AddStreet.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -94,7 +94,7 @@ namespace Prog_3_Project_alpha_v0._1
 
             try
             {
-                StaffID.Town = txt_AddTown.Text.Trim();
+                staffID.Town = txt_AddTown.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -104,7 +104,7 @@ namespace Prog_3_Project_alpha_v0._1
 
             try
             {
-                StaffID.County = txt_AddCounty.Text.Trim();
+                staffID.County = txt_AddCounty.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -114,7 +114,7 @@ namespace Prog_3_Project_alpha_v0._1
 
             try
             {
-                StaffID.Postcode = txt_AddPostcode.Text.Trim();
+                staffID.Postcode = txt_AddPostcode.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -124,7 +124,7 @@ namespace Prog_3_Project_alpha_v0._1
 
             try
             {
-                StaffID.TelNo = txt_AddTelephone.Text.Trim();
+                staffID.TelNo = txt_AddTelephone.Text.Trim();
             }
             catch (MyException MyEx)
             {
@@ -136,25 +136,25 @@ namespace Prog_3_Project_alpha_v0._1
             {
                 if (ok)
                 {
-                    drCustomer = dsInTheDogHouse.Tables["Customer"].NewRow();
-                    drCustomer["StaffID"] = StaffID.StaffID;
-                    drCustomer["Forename"] = StaffID.Forename;
-                    drCustomer["Surname"] = StaffID.Surname;
-                    drCustomer["Street"] = StaffID.Street;
-                    drCustomer["Town"] = StaffID.Town;
-                    drCustomer["County"] = StaffID.County;
-                    drCustomer["Postcode"] = StaffID.Postcode;
-                    drCustomer["TelNo"] = StaffID.TelNo;
+                    drStaff = dsRota.Tables["Customer"].NewRow();
+                    drStaff["StaffID"] = staffID.StaffID;
+                    drStaff["Forename"] = staffID.Forename;
+                    drStaff["Surname"] = staffID.Surname;
+                    drStaff["Street"] = staffID.Street;
+                    drStaff["Town"] = staffID.Town;
+                    drStaff["County"] = staffID.County;
+                    drStaff["Postcode"] = staffID.Postcode;
+                    drStaff["TelNo"] = staffID.TelNo;
 
-                    dsInTheDogHouse.Tables["Customer"].Rows.Add(drCustomer);
-                    daCustomer.Update(dsInTheDogHouse, "Customer");
+                    dsRota.Tables["Customer"].Rows.Add(drStaff);
+                    daStaff.Update(dsRota, "Customer");
 
                     MessageBox.Show("Customer Added");
 
                     if (MessageBox.Show("Do you wish to add another customer?", "Add Customer", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                     {
                         clearAddForm();
-                        getNumber(dsInTheDogHouse.Tables["Customer"].Rows.Count);
+                        getNumber(dsRota.Tables["Customer"].Rows.Count);
                     }
                     else
                     {
@@ -179,8 +179,8 @@ namespace Prog_3_Project_alpha_v0._1
         }
         private void getNumber(int noRows)
         {
-            drCustomer = dsInTheDogHouse.Tables["Customer"].Rows[noRows - 1];
-            lbl_AddStaffIDChange.Text = (int.Parse(drCustomer["StaffID"].ToString()) + 1).ToString();
+            drStaff = dsRota.Tables["Customer"].Rows[noRows - 1];
+            lbl_AddStaffIDChange.Text = (int.Parse(drStaff["StaffID"].ToString()) + 1).ToString();
         }
         private void TabCon_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -193,14 +193,14 @@ namespace Prog_3_Project_alpha_v0._1
             {
                 case 0://Display tab selected
                     {
-                        dsInTheDogHouse.Tables["Customer"].Clear();
-                        daCustomer.Fill(dsInTheDogHouse, "Customer");
+                        dsRota.Tables["Customer"].Clear();
+                        daStaff.Fill(dsRota, "Customer");
 
                         break;
                     }
                 case 1://add tab selected
                     {
-                        int noRows = dsInTheDogHouse.Tables["Customer"].Rows.Count;
+                        int noRows = dsRota.Tables["Customer"].Rows.Count;
                         if (noRows == 0)
                         {
                             lbl_AddStaffIDChange.Text = "10000";
@@ -223,15 +223,15 @@ namespace Prog_3_Project_alpha_v0._1
                         else
                         {
                             lbl_EditStaffIDChange.Text = custNoSelected.ToString();
-                            drCustomer = dsInTheDogHouse.Tables["Customer"].Rows.Find(lbl_EditStaffIDChange.Text);
+                            drStaff = dsRota.Tables["Customer"].Rows.Find(lbl_EditStaffIDChange.Text);
 
-                            Txt_EditForename.Text = drCustomer["Forename"].ToString();
-                            txt_EditSurname.Text = drCustomer["Surname"].ToString();
-                            txt_EditStreet.Text = drCustomer["Street"].ToString();
-                            txt_EditTown.Text = drCustomer["Town"].ToString();
-                            txt_EditCounty.Text = drCustomer["County"].ToString();
-                            txt_EditPostcode.Text = drCustomer["Postcode"].ToString();
-                            txt_EditTelphone.Text = drCustomer["TelNo"].ToString();
+                            Txt_EditForename.Text = drStaff["Forename"].ToString();
+                            txt_EditSurname.Text = drStaff["Surname"].ToString();
+                            txt_EditStreet.Text = drStaff["Street"].ToString();
+                            txt_EditTown.Text = drStaff["Town"].ToString();
+                            txt_EditCounty.Text = drStaff["County"].ToString();
+                            txt_EditPostcode.Text = drStaff["Postcode"].ToString();
+                            txt_EditTelphone.Text = drStaff["TelNo"].ToString();
 
                             break;
                         }
@@ -293,12 +293,12 @@ namespace Prog_3_Project_alpha_v0._1
             }
             else
             {
-                StaffId StaffID = new StaffId();
+                Staff staffID = new Staff();
                 bool ok = true;
                 errP.Clear();
                 try
                 {
-                    StaffID.StaffID = Convert.ToInt32(lbl_EditStaffIDChange.Text.Trim());//passd to Customer class to check
+                    staffID.StaffID = Convert.ToInt32(lbl_EditStaffIDChange.Text.Trim());//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -307,7 +307,7 @@ namespace Prog_3_Project_alpha_v0._1
                 }
                 try
                 {
-                    StaffID.Title = cbx_EditTitle.Text.Trim();//passd to Customer class to check
+                    staffID.Title = cbx_EditTitle.Text.Trim();//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -316,7 +316,7 @@ namespace Prog_3_Project_alpha_v0._1
                 }
                 try
                 {
-                    StaffID.Surname = txt_EditSurname.Text.Trim();//passd to Customer class to check
+                    staffID.Surname = txt_EditSurname.Text.Trim();//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -325,7 +325,7 @@ namespace Prog_3_Project_alpha_v0._1
                 }
                 try
                 {
-                    StaffID.Forename = Txt_EditForename.Text.Trim();//passd to Customer class to check
+                    staffID.Forename = Txt_EditForename.Text.Trim();//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -334,7 +334,7 @@ namespace Prog_3_Project_alpha_v0._1
                 }
                 try
                 {
-                    StaffID.Street = txt_EditStreet.Text.Trim();//passd to Customer class to check
+                    staffID.Street = txt_EditStreet.Text.Trim();//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -343,7 +343,7 @@ namespace Prog_3_Project_alpha_v0._1
                 }
                 try
                 {
-                    StaffID.Town = txt_EditTown.Text.Trim();//passd to Customer class to check
+                    staffID.Town = txt_EditTown.Text.Trim();//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -352,7 +352,7 @@ namespace Prog_3_Project_alpha_v0._1
                 }
                 try
                 {
-                    StaffID.County = txt_EditCounty.Text.Trim();//passd to Customer class to check
+                    staffID.County = txt_EditCounty.Text.Trim();//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -361,7 +361,7 @@ namespace Prog_3_Project_alpha_v0._1
                 }
                 try
                 {
-                    StaffID.Postcode = txt_EditPostcode.Text.Trim();//passd to Customer class to check
+                    staffID.Postcode = txt_EditPostcode.Text.Trim();//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -370,7 +370,7 @@ namespace Prog_3_Project_alpha_v0._1
                 }
                 try
                 {
-                    StaffID.TelNo = txt_EditTelphone.Text.Trim();//passd to Customer class to check
+                    staffID.TelNo = txt_EditTelphone.Text.Trim();//passd to Customer class to check
                 }
                 catch (MyException MyEx)
                 {
@@ -381,19 +381,19 @@ namespace Prog_3_Project_alpha_v0._1
                 {
                     if (ok)
                     {
-                        drCustomer.BeginEdit();
+                        drStaff.BeginEdit();
 
-                        drCustomer["StaffID"] = StaffID.StaffID;
-                        drCustomer["Forename"] = StaffID.Forename;
-                        drCustomer["Surname"] = StaffID.Surname;
-                        drCustomer["Street"] = StaffID.Street;
-                        drCustomer["Town"] = StaffID.Town;
-                        drCustomer["County"] = StaffID.County;
-                        drCustomer["Postcode"] = StaffID.Postcode;
-                        drCustomer["TelNo"] = StaffID.TelNo;
+                        drStaff["StaffID"] = staffID.StaffID;
+                        drStaff["Forename"] = staffID.Forename;
+                        drStaff["Surname"] = staffID.Surname;
+                        drStaff["Street"] = staffID.Street;
+                        drStaff["Town"] = staffID.Town;
+                        drStaff["County"] = staffID.County;
+                        drStaff["Postcode"] = staffID.Postcode;
+                        drStaff["TelNo"] = staffID.TelNo;
 
-                        drCustomer.EndEdit();
-                        daCustomer.Update(dsInTheDogHouse, "Customer");
+                        drStaff.EndEdit();
+                        daStaff.Update(dsRota, "Customer");
 
                         MessageBox.Show("Staff Details Updated", "Customer");
 
@@ -424,14 +424,14 @@ namespace Prog_3_Project_alpha_v0._1
             }
             else
             {
-                drCustomer = dsInTheDogHouse.Tables["Customer"].Rows.Find(DGV1.SelectedRows[0].Cells[0].Value);
+                drStaff = dsRota.Tables["Customer"].Rows.Find(DGV1.SelectedRows[0].Cells[0].Value);
 
-                string tempName = drCustomer["Forename"].ToString() + " " + drCustomer["Surname"].ToString() + "\'s";
+                string tempName = drStaff["Forename"].ToString() + " " + drStaff["Surname"].ToString() + "\'s";
 
                 if (MessageBox.Show("Are you sure you want to delete " + tempName + " details?", "AddCustomer", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    drCustomer.Delete();
-                    daCustomer.Update(dsInTheDogHouse, "Customer");
+                    drStaff.Delete();
+                    daStaff.Update(dsRota, "Customer");
                 }
             }
         }
@@ -450,6 +450,11 @@ namespace Prog_3_Project_alpha_v0._1
         private void btn_Display_Edit_Click(object sender, EventArgs e)
         {
             TabCon.SelectedIndex = 2;
+        }
+
+        private void StaffForm_Load_1(object sender, EventArgs e)
+        {
+
         }
 
         private void btn_EditCancel_Click(object sender, EventArgs e)

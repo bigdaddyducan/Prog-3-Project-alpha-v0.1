@@ -8,12 +8,12 @@ namespace Prog_3_Project_alpha_v0._1
 {
     internal class Staff
     {
-        private int StaffID;
+        private int staffID;
         private string surname, forename, street, town, county, postcode, telNo;
 
         public Staff()
         {
-            this.StaffID = 0;
+            this.staffID = 0;
             this.surname = "";
             this.forename = "";
             this.street = "";
@@ -23,9 +23,9 @@ namespace Prog_3_Project_alpha_v0._1
             this.telNo = "";
         }
 
-        public Staff(int StaffID, string surname, string forename, string street, string town, string county, string postcode, string telNo)
+        public Staff(int staffID, string surname, string forename, string street, string town, string county, string postcode, string telNo)
         {
-            this.StaffID = StaffID;
+            this.staffID = StaffID;
             this.surname = surname;
             this.forename = forename;
             this.street = street;
@@ -35,7 +35,7 @@ namespace Prog_3_Project_alpha_v0._1
             this.telNo = telNo;
         }
 
-        public int StaffId
+        public int StaffID
         {
             get { return StaffID; }
             set { StaffID = value; }

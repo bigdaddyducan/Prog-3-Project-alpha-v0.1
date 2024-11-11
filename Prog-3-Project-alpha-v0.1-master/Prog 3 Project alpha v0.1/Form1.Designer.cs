@@ -31,11 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnl_Menu = new System.Windows.Forms.Panel();
-            this.txt_title = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txt_title = new System.Windows.Forms.TextBox();
             this.pnl_form = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnl_Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // toolTip1
@@ -46,22 +48,13 @@
             // 
             // pnl_Menu
             // 
+            this.pnl_Menu.Controls.Add(this.pictureBox2);
             this.pnl_Menu.Controls.Add(this.pictureBox1);
             this.pnl_Menu.Controls.Add(this.txt_title);
             this.pnl_Menu.Location = new System.Drawing.Point(3, 1);
             this.pnl_Menu.Name = "pnl_Menu";
             this.pnl_Menu.Size = new System.Drawing.Size(158, 680);
             this.pnl_Menu.TabIndex = 3;
-            // 
-            // txt_title
-            // 
-            this.txt_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_title.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.txt_title.Location = new System.Drawing.Point(3, 0);
-            this.txt_title.Name = "txt_title";
-            this.txt_title.Size = new System.Drawing.Size(155, 57);
-            this.txt_title.TabIndex = 0;
-            this.txt_title.Text = "𝓼𝓶𝓲𝓵𝓮𝓼";
             // 
             // pictureBox1
             // 
@@ -73,6 +66,16 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // txt_title
+            // 
+            this.txt_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_title.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_title.Location = new System.Drawing.Point(3, 0);
+            this.txt_title.Name = "txt_title";
+            this.txt_title.Size = new System.Drawing.Size(155, 57);
+            this.txt_title.TabIndex = 0;
+            this.txt_title.Text = "𝓼𝓶𝓲𝓵𝓮𝓼";
+            // 
             // pnl_form
             // 
             this.pnl_form.BackColor = System.Drawing.Color.White;
@@ -82,6 +85,16 @@
             this.pnl_form.Name = "pnl_form";
             this.pnl_form.Size = new System.Drawing.Size(805, 681);
             this.pnl_form.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Prog_3_Project_alpha_v0._1.Properties.Resources.user;
+            this.pictureBox2.Location = new System.Drawing.Point(40, 152);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(63, 62);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // MainForm
             // 
@@ -97,6 +110,7 @@
             this.pnl_Menu.ResumeLayout(false);
             this.pnl_Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -108,6 +122,7 @@
         private System.Windows.Forms.Panel pnl_Menu;
         private System.Windows.Forms.TextBox txt_title;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

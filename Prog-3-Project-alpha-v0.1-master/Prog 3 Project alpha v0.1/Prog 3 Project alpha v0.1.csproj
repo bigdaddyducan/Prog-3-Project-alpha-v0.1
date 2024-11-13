@@ -72,6 +72,9 @@
     <Compile Include="StaffFDisplay.Designer.cs">
       <DependentUpon>StaffFDisplay.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bookings.resx">
+      <DependentUpon>Bookings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

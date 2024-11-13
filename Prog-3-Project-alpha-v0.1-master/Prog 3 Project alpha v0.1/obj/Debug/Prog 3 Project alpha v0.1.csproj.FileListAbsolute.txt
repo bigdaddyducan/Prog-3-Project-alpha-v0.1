@@ -4,3 +4,10 @@ C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alph
 C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog_3_Project_alpha_v0._1.StaffForm.resources
 C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog 3 Project alpha v0.1.csproj.GenerateResource.cache
 C:\Users\30034581\Downloads\Prog-3-Project-alpha-v0.1-master\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog 3 Project alpha v0.1.csproj.CoreCompileInputs.cache
+C:\Users\niall\OneDrive\Prog3-Dentist VS\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog 3 Project alpha v0.1.csproj.AssemblyReference.cache
+C:\Users\niall\OneDrive\Prog3-Dentist VS\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog_3_Project_alpha_v0._1.Bookings.resources
+C:\Users\niall\OneDrive\Prog3-Dentist VS\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog_3_Project_alpha_v0._1.MainForm.resources
+C:\Users\niall\OneDrive\Prog3-Dentist VS\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog_3_Project_alpha_v0._1.Properties.Resources.resources
+C:\Users\niall\OneDrive\Prog3-Dentist VS\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog_3_Project_alpha_v0._1.StaffDisplay.resources
+C:\Users\niall\OneDrive\Prog3-Dentist VS\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog 3 Project alpha v0.1.csproj.GenerateResource.cache
+C:\Users\niall\OneDrive\Prog3-Dentist VS\Prog-3-Project-alpha-v0.1-master\Prog 3 Project alpha v0.1\obj\Debug\Prog 3 Project alpha v0.1.csproj.CoreCompileInputs.cache

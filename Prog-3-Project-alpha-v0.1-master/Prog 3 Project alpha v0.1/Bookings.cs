@@ -16,5 +16,10 @@ namespace Prog_3_Project_alpha_v0._1
         {
             InitializeComponent();
         }
+
+        private void listBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

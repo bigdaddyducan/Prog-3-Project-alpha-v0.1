@@ -37,10 +37,5 @@ namespace Prog_3_Project_alpha_v0._1
         {
 
         }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
